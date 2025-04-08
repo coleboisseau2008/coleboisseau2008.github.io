@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Ball with Gravity</title>
+
+    <style>
+        #canvas {
+            background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIQEhUSEBIVFRUXFRUVFRUVFRUVFRUVFRUWFhUXFRUYHSggGBolHRUVITEhJSkrLi4vFx8zODMsNygtLysBCgoKDg0OGxAQGi0lHiUvLS0yLS0tLS0tLS0tLS01LS0tLTAtLS0rLy8tLS0tLS0tLTUtLS0tLS0tLS0tLS0tLf/AABEIAKgBLAMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAAAgEDBAUGB//EAD0QAAEDAgMFBQYEBQMFAAAAAAEAAhEDIQQSMQVBUWGBEyJxkaEGMrHB0fBCUnLhFBUjYvFTgpIWM0Oiwv/EABoBAAMBAQEBAAAAAAAAAAAAAAECAwAEBQb/xAAuEQACAgEDAgMGBwEAAAAAAAAAAQIRAwQSITFBBRNhIlGBodHwFDJxkbHB4RX/2gAMAwEAAhEDEQA/APhyEIRMCEIWMCEIWMCEKVjEJgEAJgEUgNkQiFYGqYTULuK4UgJ4RCwLIATAKQFICIrYpagMVwCsbTRoVzozBqkNWl1AphRW2i+YjNkVlOktApJ6dIymURHkGFCAk7NbSYCzuVGiEZNktCdrVW1ykOWM0VYgwsVRyuxTrrMVOTOjHHghQUzVMJStlZKqIVr2pIQYyABGVSFZC1GbKC1IQr3BIWoNDJlSFJChIOCEIWMCEIWMCEKQFjApRCYBEFkAJ2hACdoTCNkgKSEwCaESdlcIhPlRCxrFhMAmaE4CNCtkNC14dnFU02rfTp2VIohkkKWoFPkmYbrY02iFRKyEpNGEUrpniFpe2yqqNsFqApWUTKUqyo2FUSgURCkpS5MTw6oDGStqqXNV1VVEKbOiJWAnlM1sqCFqGsRyQhO4JSgMhUzSohQVgjOSOUEqJQYUhXBIrCqykaKIhCEJQghCYBYwAKQEBMAmFbABNCZoUwiI2KnCIUwsK2SE7UgVoRFYQlITqCiKQ1WtCVgVzQihZMmm1baDVlaFow9WFWJz5La4HayDyWto+Coc6VtwdKPJVijmySpWyDh5GnQLn4m0BeiovYxri65IIaOfHkuJtFjQRBkkAk8CbkRysjOPAmDI3KmY3Kp5TOdCrcZ4D73qTO6KFJUhKFY2EEMyqoAqIkrRVWdKykSQYURJsrCwGI1VldoYMoIJPvHhy++CKjwGzM4KtylxUFKUREKCEwQStQSlwSq4hVkINDpilIVYQkKRoYRCFIUxgCYIAUhEVkgJ2hKAnCIrY7QpQ0KzKiSbKwiFYWqIWNYoThKU1NsmFgMYJgFBQHJhR2haGsWdhWuk5MiUyMsBK3VaKhCzuKdiRdmqibyrTijNlRSMo7O906fBJxTfJvdjZ70aARpEzv8AVcytWLjP3zVznnLAEff35BZqpRk2w44JdEUVKl1W6okqFVOKi2dkYl7Kkn6qx9QbunPmVla5Q9624bZbNIdKsotBMGdLAazuWajVie6DIgTMAmL9PmtTMrTe/X79E8eRJKgq0nUyQ73tABf15KieO/7JQ6pf4dOarcVm0Mk+4jkqkhASUUHrMywJBsDbdO7xSBKp0R6mSByQhPCUhFocVLCcBNlSbTWZgmAShO0KI7JCkBSAphYQFIKVAWAXsVrVna5X0j+y1k5Itc3ed90gClxJJ3xv0sLaJqFMvcGi0+nFa+CfRFDkMC6OOpim8EAQA0Cd5yiPE3nosIetGV8hjK1aJAQQnY1O5qcWykK5jlS5S1FGas1VHKjMupQwbTTL38BlAsbkDN6rb7N7Da+oH170wZa3/UI4/wBo38YjitKaSs5pajHji5Pt98HEpvXQoOzNNjuvFpvEnz8lmr4MsqZG3kjJzDtOu4+BXrn4FrMI6i2C6WuJH4n5SfKAWhUgyOpzwht9f495wK+WABZcyvTWkGfGRHHf+ySu0g5YuJnUXGszvFwqvkrj9lnJqTuS06c3Og1K0V2cNPpvUOplgIOvDh48wo1ydqlwZNT96K4NEX138eSnD0pPIXKdxzdN3HcPlzQSGcjMDBTUz/lFVsDnv+iqn75LdB1yi0ulKoY2fruCtqEaN00vv5nmnSvkHoVgzZN3Qd8D1P0TilDb2keiqER9/cp9tLkJAcZnega8Ul0wCWPI1DKCFY1kQpa2fuyr5bNZW1qHK5w3BRkCDgLZzwrWqoKxpXAVY6aUsoJQFoUlRKCUBaw0O1baNO06c+ErLTGvktTamnLySSYkkWdkQYA3T4A6T98Fv2dQyDNvO87m/usNJznmBv1J4cZXQovDSOXHd4KWSTqiE4SaopxzMwd4yOiowGz3VWVX6Cm0HxLnAAfE9F0KtRjgSbE/iEST4b1upAU8K9oM5m5yeJlpjpAHTmk85xikutr/AECjJKjz7TA5qpxWgNLyA0EuMAAXJJtAA3rt7d9m/wCGoUXOM1XufnAMtbAZlaOMSZPE8F2xkrS7sMccmm66Hm2NLlfQpAm+nDj+ysw9PlPL6rqUsA2AdZm3GDxVVBshkyqJZhKHaC57tp/uvoPRep2Zs0vGeo7IyIbo3dAidAufsujSaQXDMbDKDLG+PHw+KWvWfUf35EH3pMRrAaflChOE5OlweJncsjcYuvX6fU1HZzafeY5tUtsCB3sjtRH05pGZiO60xmEEiAYDrGUYLF9jYN/3SSTPCNPBddmLNQBr2y0neNOF9xC6MMXZzZJTj1V+v+HmsPg+xqEZZeXSODAeB4633eq2YnD08rnQM1QZHnfO6PIdQF1jhnNeLSCCG1DwOrXHcqHYMBpaIc0nQ6gg8TwXbGLXAz1O6Sd/f38zwlHDHPDhdpIg7yLDpN1kqYckknUnXrex+7Fer9pMC/M17WHvQ0lt9Ba40BHwMrFhNlPYe0qBoDbhsySSbC3hOu5SeN3R7OPVxcN99exyX0OzblPvaFuhDr+9w+OuixMaGk+n+V3va2ndtdmj2tz8n5RB6/Ec15rtEmRbZUdWnk8kN3vLXMm2h+uv0SVaAzQNA2fLU+ihtWFeaZySNSOpAJ+J+CVUy9uJmFO3r98P3XW2JsztS6RZtNxbGubKXACd8tOvJYMM0usNV6n2cHZuaHWcMxIOuYtMz4aLp08FKSs59XmlDG9vU4FLC9pqYbx1Ljujl+6w1qf4YgtmfHgvRfw2R7miAGmG62abgjnlVG0MK3MHAw0gB28k6+Z+StPHasWGp9r07HFp4Ilrn7mx1JIsOl5+qhlILtPuBTAgBht+oWn0XOp4WRJkbz4fVKsaXQvDNd2UIjj5LpU8B2neAhvu21ngPmqquzXtbmPuz73Hobp5RaQfPh0sxZVBdwV9OjN3eW/qq6lGDHwUJWHcmzkJgVAQvLOwfMiUCmZiL8N6epSLCWu1HVCw0ImAQRGqgIBofMrqOtxPLiqWNXUwVMsGeOF+HgPmkm6RSGJyZ1sC1rGkOAL3tLT/AGgizRz4npxnAyg9zxTYC4us373fBX4d+dwA1kX3deXNdbZjf4eYEuNi7WeQ5ffhy8xv3nfj0PmUu3vOJtHAuoVXUnOzFpiRMHmOX0WhjzlNM3LmwABJkiBHE8lt2sx1V7y0S/MYHETe+7irNntbQue9U4/hZOoE7+flz6Y4pTSsP/Ouddvf99zqezezWYP+o+H1ogGLUwdQ3i7iegtqvtNiO1axrrHvxu/JHqAsj9ou3QOf0lZ3kugkcTMyb717Gj0S3bnyztekgseyC4OVREnLBBNunPkunUgtDWuiBAA5db/ukbqQ0C43b1pp7CrvGanTc4C8U4eR4tBzeS9bH4elG5V/B4Gp0cYRbqx9hUHTmzQDIG6TBEDzuV3KLA61Ro4yJFv1C/Qrm4XCVzq2CANZa4dCJW0Nqst2ZgxJaJnxv8YUcugUeh8ZqblN8qyfaDFBnZtp90Q4kCbmwE7zp6rHg8c+eLfxAkW5Zp1TY3A1nkFrJGWLZSR3junwQNmPABxBGHpD8Zc2ePda0lz3Hw3LjWKUVyDHHGsajab/AHf1bPT7FqueCGgBo96TInmRYlW4luHcS0ktdN8si/gfovO4r2ooMa1mHZUdTbYAlrMx/M4kOc70Wen7Z1M16NONwl0q3mRSpnC9BnlJzjFr4pP4nqf5EIJY8ukRldEEakffBee2jsd4OVgdA/CdRcaHRwt6b1qw3tyD71D/AIPnxsWros9qMNVEPZUbEE5mths75zWW3Y5dycFrsErlG/2/o87X2UKjDTqBzZblINyIiDG42B6LyWM9m6lEySHs/MAQB+obvhzK+qfzPCm7XZ4/K3MR56JaW1qbjGbwLgAP/XTqhPDCfc68HiWoxXUHXdP+uD5ZS2HmGZzjmOgDTltxPl4LRQ2FiKhu3I2bOIOWBYBtpd09F9UxmzxWYILSNREObO48Vx62ycQIPdJH98SOUwgtNFF4+NOfuT9e38Hmtn7K7MOIZeQ0ui0nczpda6LWucJkETeORHXXRemGCfUaGvkEGcxsAQDfnqslfCUyS2m9pfPvNc2Z4ZZ05C66IwUehz/jfMbvqee2nsio7+o05oHeAEm2+1+nJYm7PcBNQhoMRvMjluPivUYXFGictSWuHhfnwIWevSpvJLCMpN2H1LeHgjLGm7ReGqyL2WuOzPKPwpaZJDtbg/EahK7CtNw4jkfkdy9gcLh3GeygjcJAPi2fVVYjCsqDKKTWmfyx4XaPUJPKLrX9OGv2PPtxECNIFgpxNTMy9zIt0cPmtWIwgbIdTeCBOhcI5P4ea45xDXHKxj5nQQTYHQAJZT28MvBKfMUZnUQJ+4VLgdy1VMRFiCDwIg/VU9u3fPouduPZndFyOBTZvKfD0C50AaeXVaKOHBu7TgNV1MM+0M7viAR5f5XhTyV0Pchjsoo0MpMXMm/3oq8Xh5cSImT8V0KRAvJnhlH1XVwWyxiCXCkSN5BLRPKTBPmuWWfZ7Ujsx6ffwjxtWmRqOq9Nsb2Xa6i+piC5rnNHZNGrRIOd08RIA4Hwj0WG2Gxojsw0zIg5nSNC69xy0W3+VHKS5znmD3WCB1c6Z8AufLr9yUYOj0cHhcVK8jv0PKDYbGNEQ47zH/zr6lMMFm1Aa3eb35NZv6wF2auCqN0Jb+sgAfD4Kt2Dj/uVQXHQBrnW8Yn0hVxzcurPVWixKkkcluDyWpy4am0O66yraOfeLbxIJPT5rU+ll1dbxa30MFAbF3PyN5uE9IXoYsW4utNCPTj0EF5hsTJO+/xWes9n4ifKCei01MfTA7riSPzEx0gLDU2gzVzhHLMSf0zvXq4oQiupDPPFGNKS/oYOk9xhJ4kmBwJT1cUygJeQ9/5dw8eXM+S5GK2y492n3G+bjzLuK5wfJ1mee/muqOpjDiPU8bProq1Dl+/t8F3/AFZ2qntJX3PAH5WMYwDwLRKrG13P96vUB4Oe+OhBjzhcPtI8fgk7UcPVPDXSh3X6HhZZua5Z6iht+qyB2xLRuqTVb0Dpy9IWyh7Q0JmpSvvdTdUE+LXk/ELxXbJ21VpeJTbbjSPNy6SM+vy4PpWF9pMKAXNcAALNgh5PAFxjrNl5nbOMrVyajhb8IaZDG8AfnqV59lUpu1O4qGXUvIva+RzYdBDDJuPX15H7UC8mfgmbWg6g+S51Q3RTXnuR6HlKjt4erMntWM5lwHkN5UVMRH/lm890kz4mFyU1NbcybwrqdijinzIqObHAkLqUvaWoyBU/qN6NcB46HynmvMioQIVdY6J45ZR6MjLSwm6kj6Fsf2gbP9OoWTq1zII4e7IPifRdHEe0zm/ipuI4NJHiSD6fBfL8K4iTJFuK00apmTfxKvDUyo4cvhWJz3HsMXturVkPcSNzRDGAfpGvVcupjHWgttwPzlcjtbqio9F53RTHo4x4SPWUdvvIyVg2o3cT7zfB3HnBXS2di7F1R9OjTAJDyWvqVstw1gsAOdr2vePnjyhiH4mQZeHwa44+H2vkfRMT7cO92iGNAsHPdncecWA9VycT7QVHnv1SfAkDyFl5RhhOXIefJiQ8NwY37Mfqeo/6mqMEdpnHBwJPnqsh9oaYLnNaWucACGtbHQ2tyK4L6wA0WBzkJaia7nRj0GL3Hexm3y+2Vsf3NDj629FW3bxFsjf9vdHkuCSlzKXnzu7OpaPHVUdfDYed7Z+95C6eDwL3GzD1084+a478a7ccv6bHqQoO0qn+o/8A5u+q8mWOcuh7EJxXU9lSwTKYmqaTTzcZ+Eu6BWjbbRZl+hAtwBA+C8I3Fv8Azu/5FP8Ax9T856wfio/gr/M7PRxa+MOkT2OI2+R7ziOQsPIarmYn2kqGzCWjjmOY+tl5urXLiSTKrzq0NJCPYGTxLJLhcI7w25U/FB9D5pKu08187gd4MkdCFxS9SHK6xRRP8flapuze7F8FUMUW3aSPAws2ZQSqpURlnk+5v/mj4hwa7xEHzbCyVMQTqBu4qpKdFVSZLJnnP8zsl1YlIXKIUwim2czbYsqAmyohNyTZAUhACkLCssahzkoKguRbEoVylgUSmDlIcsATsCrDlY16JNjwgtQHoLkROR2CAgFJnS5kbBReHIJVAciVrBtLioCrlMEbNQ0psyDEaXSI2KV1CqXK9zVU5qRlYlDkiscFWUjLIfMozJFKnRSx8yZpVQKdpWGUiSgKFIWCSEwUBMEaHQwCnKoBTgpkh0RlSlqslQVRIDK8qMqeVEqsYkWJCghMSlJT0iLZBCVxUlyUlTkwEShTCUqTCClKplKEcFOCqZU5lrFaNAcjMs+ZGdaxdhozKMyozqMy1h2GjOpzrNmRmWs2w09omFVY8ynMjuN5Zr7ZR2yyZkStuN5aNJrJHVVTKhDcFQQ5cllQhLY1AhCEAgmCELBRMqZQhYeyZUhyEIhsnMmzoQiGwzqM6EJ0wNhnUF6EJ1Jk2xS5LmQhK5MUiVEoQkcmEMyJQhCzEIQhAwIQhAwIQhYwIQhEwIQhYwIQhYwIQhYwIQhYwIQhYx//2Q==");
+            background-size: cover; 
+        }
+    </style>
+
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+
+        canvas.width = 1600;
+        canvas.height = 800;
+
+        var ballX = 200;
+        var ballY = 50;
+        var ballSpeedX = 2;
+        var ballSpeedY = 0;
+        var ballRadius = 10;
+
+        var gravity = 0.2;
+        var bounceFactor = 0.7;
+        var friction = 0.99;
+
+
+        setInterval(loop, 10)
+
+
+        function loop() {
+            ballSpeedY = ballSpeedY + gravity;
+            ballX = ballX + ballSpeedX;
+            ballY = ballY + ballSpeedY;
+
+            if (ballX - ballRadius < 0) {
+                ballSpeedX = -ballSpeedX * friction;
+            }
+
+            if (ballX + ballRadius > canvas.width) {
+                ballSpeedX = -ballSpeedX * friction;
+            }
+
+            if (ballY + ballRadius > canvas.height) {
+                ballY = canvas.height - ballRadius;
+                ballSpeedY = -ballSpeedY * bounceFactor;
+                ballSpeedX = ballSpeedX * friction;
+            }
+            ctx.clearRect(0, 0, canvas.width, canvas.height); 
+            ctx.fillStyle = "#d62d02";
+            ctx.beginPath();
+            ctx.arc(ballX, ballY, ballRadius, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+    </script>
+</body>
+
+</html>
